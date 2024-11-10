@@ -1,0 +1,24 @@
+<div id="wrapper">
+    <div id="center">
+        <form (ngSubmit)="send()" [hidden]="wantChen">
+            <div class="mb-3">
+                <label for="name">enter email:</label>
+                <input type="text" class="form-control" id="name" name="Name" placeholder="Enter email"
+                    [(ngModel)]="email">
+            </div>
+            <div class="mb-3">
+                <label for="name">enter password:</label>
+                <input type="text" class="form-control" id="name" name="Name" placeholder="Enter password"
+                    [(ngModel)]="pass">
+            </div>
+            <button type="submit" class="btn btn-primary"
+                style="background-color: rgb(255, 0, 170);margin-right: 2px;float: left;width: 135px;font-size: large;"
+                onmouseover="this.style.backgroundColor='  rgb(82, 82, 82)'"
+                onmouseout="this.style.backgroundColor=' rgb(255, 0, 170)'">Submit</button>
+        </form>
+        <button class="btn btn-primary" style="background-color: rgb(255, 0, 170);width: 135px;float: left;font-size: large;"
+            (click)="signal()" onmouseover="this.style.backgroundColor=' rgb(82, 82, 82)'"
+            onmouseout="this.style.backgroundColor='rgb(255, 0, 170)'">to signal</button>
+
+    </div>
+</div>

@@ -1,0 +1,53 @@
+html {
+    font-size: 14px;
+}
+
+
+.card {
+    width: 1000px;
+    margin: auto;
+    background: var(--surface-card);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    background-color: rgb(255, 255, 255);
+    /* box-shadow: 2px 6px 5px rgba(0.2, 0, 0, 0.3); */
+
+}
+
+p-card {
+    background-color: blue;
+    width: 1000px;
+    margin: auto;
+}
+
+.custom-button {
+    width: 100px;
+    height: 40px;
+    background-color: #ff0095;
+    /* רקע ירוק */
+    color: white;
+    /* צבע טקסט לבן */
+    border: 1px solid #dc048d;
+    /* מסגרת ירוקה */
+    border-radius: 5px;
+    /* פינות מעגלות */
+    padding: 5px;
+    /* רווחים פנימיים */
+    font-size: 12px;
+    /* גודל פונט */
+    cursor: pointer;
+    /* ידית עכבר */
+    transition: background-color 0.3s;
+    /* אנימציה כאשר העכבר חופף מעל */
+    align-items: center;
+
+}
+
+.custom-button:hover {
+    background-color: #5b5a5b;
+    /* רקע ירוק כהה בעקיפת עכבר */
+    border: 1px solid #5b5a5b;
+    /* מסגרת ירוקה */
+
+}

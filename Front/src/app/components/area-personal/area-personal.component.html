@@ -1,0 +1,137 @@
+<div id="wrapper">
+    <div id="center">
+        <img id="img" [src]="imageDataURL" alt="hoNo">
+        <button id="profile" (click)="fshowOrders()" [hidden]="Manager">see all your orders</button>
+        <button id="profile" (click)="fshowChangs()" [hidden]="Manager">chenge youer personal detels</button>
+        <button id="profile" (click)="Unsubscribe()" [hidden]="Manager">Unsubscribe</button>
+    </div>
+</div>
+<!-- טופס פרטים אישיים -->
+<div id="wrapper" [hidden]="!showChangs">
+    <div id="center">
+        <form (ngSubmit)="send()" [hidden]="Manager">
+            <div class="mb-3">
+                <label for="name">name:</label>
+                <input type="text" class="form-control" id="name" name="Name" placeholder="Enter name"
+                    [(ngModel)]="newUser.name">
+            </div>
+            <div class="mb-3">
+                <label for="LastName">LastName:</label>
+                <input type="text" class="form-control" id="LastName" name="LastName" placeholder="Enter LastName"
+                    [(ngModel)]="newUser.lastName">
+            </div>
+            <div class="mb-3">
+                <label for="CellPhone">CellPhone:</label>
+                <input type="text" class="form-control" id="CellPhone" name="CellPhone" placeholder="Enter CellPhone"
+                    [(ngModel)]="newUser.cellPhone">
+            </div>
+            <div class="mb-3">
+                <label for="Email">Email:</label>
+                <input type="text" class="form-control" id="Email" name="Email" placeholder="Enter Email"
+                    [(ngModel)]="newUser.email">
+            </div>
+            <div class="mb-3">
+                <label for="Password">Password:</label>
+                <input type="text" class="form-control" id="Password" name="Password" placeholder="Enter Password"
+                    [(ngModel)]="newUser.password">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+
+
+<!-- סינונים-->
+<div class="filter-container"[hidden]="Manager||!showOrders">
+    <div>
+        <label>Filter Past/Future Trips:</label>
+        <select [(ngModel)]="filterPastTrips" (change)="filterTrips()">
+            <option value="null">All</option>
+            <option value="true">Past</option>
+            <option value="false">Future</option>
+        </select>
+    </div>
+    <div>
+        <label>Filter by Trip Type:</label>
+        <select id="option" [(ngModel)]="filterType" (change)="FilterTripType()">
+            <option *ngFor="let option of options" [value]="option.name">{{ option.name }}</option>
+        </select>
+    </div>
+
+    <div>
+        <label>Filter by Price:</label>
+        <input type="number" [(ngModel)]="filterByPrice" (input)="filterTripsByPrice()" />
+    </div>
+</div>
+<!-- כל הטיולים של היוזר -->
+<div style="display: flex;flex-wrap: wrap;width: 90%; gap: 90px;">
+    <div *ngFor="let t of ListTFilter" class="container mt-3" [hidden]="Manager||!showOrders">
+        <div class="card" style="width:350px ">
+            <div class="card-body">
+                <h4 class="card-title">{{t.destination}}</h4>
+                <h5 class="card-title">{{t.date}}</h5>
+                <button (click)="cancelTrip(t.id!)" class="btn btn-danger">Cancel Trip</button>
+                <img src="{{t.img}}" width="50%">
+
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="ListTFilter==null" >no reasults</div>
+<!-- כל המשתמשים -->
+<div *ngFor="let user of ListU" class="user-card"[hidden]="!Manager">
+    <div class="user-images">
+        <div class="user-images" style="width: 100px;">
+            <img alt="User Image" class="user-image" [src]="'https://localhost:7292/api/getImage/'+user.id" />
+            <!-- <span *ngIf="!user.id || !doesImageExistForUser(user.id)">No Image</span> -->
+        </div>
+    </div>
+    <div class="user-details">
+        <p><strong>ID:</strong> {{user.id}}</p>
+        <p><strong>Name:</strong> {{user.name}}</p>
+        <p><strong>Last Name:</strong> {{user.lastName}}</p>
+        <p><strong>Cell Phone:</strong> {{user.cellPhone}}</p>
+        <p><strong>Email:</strong> {{user.email}}</p>
+        <p><strong>Password:</strong> {{user.password}}</p>
+        <p><strong>Facertificate:</strong> {{user.facertificate}}</p>
+    </div>
+    <div style="margin: auto;">----------------------------------------------------------------------------</div>
+
+</div>
+<!-- //////////////////////////////////////////////////// -->
+
+<!-- <div class="card">
+    <p-table [value]="ListU" [tableStyle]="{'min-width': '60rem'}" [hidden]="!Manager">
+        <ng-template pTemplate="caption">
+            <div class="flex align-items-center justify-content-between">
+                Products
+                <p-button icon="pi pi-refresh"></p-button>
+            </div>
+        </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Name</th>
+                <th>Image</th>
+                <th>phone</th>
+                <th>Category</th>
+                <th>Reviews</th>
+                <th>Status</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-product>
+            <tr>
+                <td>{{product.name}}</td>
+                <td><img [src]="'https://localhost:7292/api/getImage/'+product.id" [alt]="product.name" width="100"
+                        class="shadow-4" /></td>
+                <td>{{product.cellPhone | currency:'USD'}}</td>
+                <td>{{product.category}}</td>
+                <td><p-rating [ngModel]="product.rating"></p-rating></td>
+                <td><p-tag [value]="product.inventoryStatus" [severity]=""></p-tag></td>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="summary">
+            <div class="flex align-items-center justify-content-between">
+            </div>
+        </ng-template>
+    </p-table>
+</div> -->

@@ -1,0 +1,56 @@
+<div class="container mt-3">
+  <div class="dropdown">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" style="background-color: #ff00a2;">
+      בחר סוג טיול
+    </button>
+    <ul class="dropdown-menu">
+      <li *ngFor="let tt of ListTT!"><a id={{tt.id}} class="dropdown-item" (click)="sortBy(tt.id)">{{tt.name}}</a></li>
+      <li>
+        <hr class="dropdown-divider">
+      </li>
+      <li><a class="dropdown-item" (click)="sortBy(-1)">לא משנה לי</a></li>
+    </ul>
+  </div>
+</div>
+<div class="wrap" style="display: flex;  flex-wrap: wrap;width:80%; gap: 80px;justify-content: center;margin: auto;">
+  
+  <div *ngFor="let t of sortedListT!" class="container mt-3" style="width: 18rem ">
+    <!-- *ngIf="t.date<=currentDate" -->
+    <div class="card" style="width:300px">
+      <img class="card-img-top" src="{{t.img}}" alt="Card image" style="width:100%">
+      <div class="card-body">
+        <h4 class="card-title" style="text-align: center;">{{t.destination}}</h4>
+        <!-- <p style="text-align: center;" *ngIf="t.date==currentDate"> הזדמנות אחרונה!!! היום</p> -->
+        <p class="card-text" style="text-align: center;">{{t.date}}</p>
+        <!-- <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p> -->
+        <!-- <a [routerLink]="['/SingleTrip', t.id]" class="btn btn-primary">See more details</a> -->
+        <!-- <a href="SingleTrip/{{ t.id }}" >See more details</a> -->
+        <button (click)="show(t.id!)" type="button" mdbBtn color="primary" mdbWavesEffect style="padding: 8px 8px;
+        border: 1px solid #ff00a2;
+        background-color: #ff00a2;
+        border-radius: 4px;
+        width: 125px;
+        text-align: center;
+        direction: rtl;
+        margin: 5px;">
+          <i class="pi pi-spin pi-cog" style="font-size: 2rem"></i>
+          Details
+        </button>
+        <button (click)="QuickOrder(t)" type="button" mdbBtn color="primary" mdbWavesEffect style="padding: 8px 8px;
+        border: 1px solid #ff00a2;
+        background-color: #ff00a2;
+        border-radius: 4px;
+        width: 125px;
+        text-align: center;
+        direction: rtl;
+        margin: 5px;">
+          <i class="pi pi-check" style="font-size: 2rem"></i>
+          Quick order
+        </button>
+        <router-outlet></router-outlet>
+        <!-- [routerLink]="['/SingleTrip', t.id]" -->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <router-outlet></router-outlet> -->

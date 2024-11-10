@@ -1,0 +1,71 @@
+<h1 style="text-align: center;margin-top:-2%;font-family: Amatic SC;font-weight: 700">-{{trip.destination}}-</h1>
+<div class="wraper">
+    <div id="demo" class="carousel slide" data-bs-ride="carousel" style="transform: scale(0.3);;margin-top: -23%;">
+        <!-- Indicators/dots -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"
+                style="width: 20%;height: 10px;"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="1" style="width: 20%;height: 10px;"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="2" style="width: 20%;height: 10px;"></button>
+        </div>
+        <!-- The slideshow/carousel -->
+        <div class="carousel-inner" style="height: 50%;">
+            <div class="carousel-item active">
+                <img src="{{trip.img}}" alt="Los Angeles" class="d-block"
+                    style="width:100%;  filter: hue-rotate(90deg);">
+
+                <div class="carousel-caption">
+                    <h1>it is a real picture!!</h1>
+                    <p>We had such a great time in LA!</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{{trip.img}}" alt="Chicago" class="d-block" style="width:100%;  filter: brightness(150%);">
+                <div class="carousel-caption">
+                    <h1>no! it not a dreem!</h1>
+                    <p>Thank you, Chicago!</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="{{trip.img}}" alt="New York" class="d-block" style="width:100% ;  filter: grayscale(100%);">
+                <div class="carousel-caption">
+                    <h1>Oh,oh! how beautiful!</h1>
+                    <p>We love that</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Left and right controls/icons -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" style="transform: scale(3);"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+            <span class="carousel-control-next-icon" style="transform: scale(3);"></span>
+        </button>
+    </div>
+    <!-- </div> -->
+    <div style="text-align: center;
+        margin-top: -60%;
+        /* background-color: rgba(0, 0, 0, 0.276); */
+        /* width: 800px;  */
+        margin: auto;">
+        <h1>Do you like {{trip.nameType}}?? </h1>
+        <div style="font-size: larger;">grate!! We want to leave at  {{trip.date}} </div>
+        <h2>Hurry to join us!!</h2>
+        <h4>All the pleasure only costs{{trip.price}}$</h4>
+        <div>How many places would you like?</div>
+        <div class="container mt-3">
+            <ul class="pagination">
+                <li class="page-item"><a class="page-link" (click)="inc()"
+                        style="background-color: rgb(255, 0, 170);font-size: large;font-family: CS Roger;">+</a>
+                </li>
+                <li class="page-item"><a class="page-link" style="font-size: large;">{{places}}</a></li>
+                <li class="page-item"><a class="page-link" (click)="dic()"
+                        style="background-color: rgb(255, 0, 170);font-size: large;">-</a></li>
+            </ul>
+            <p *ngIf="{bool}">no more tickets🤷‍♀️</p>
+            <button (click)="order()">invate in</button>
+        </div>
+
+    </div>
+</div>

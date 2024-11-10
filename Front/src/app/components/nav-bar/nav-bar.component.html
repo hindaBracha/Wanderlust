@@ -1,0 +1,17 @@
+<div id="wrapper">
+    <div id="center">
+        <a routerLink="./trips" style="text-decoration: none;color: black;font-family: Amatic SC;font-weight: bolder;font-size: 30px;">trips(</a>
+        <button id="profile" (click)="personal()">
+            <!-- <img id="img" src="../../../assets/pic/פרופילמשתמש.png" [hidden]="imageDataURL" alt="kkkk"> -->
+            <img id="img" [src]="UserService.getcurrentimg()" alt="kkkk">
+        </button>
+        <a routerLink="./Home" style="text-decoration: none;color: black;font-family: Amatic SC;font-weight: bolder;font-size: 30px;">)home</a>
+    </div>
+    <div id="end">
+        <a routerLink="./login" style="text-decoration: none;color: black;font-family: Amatic SC;font-weight: bolder;font-size: 30px;">log in/</a>
+        <a routerLink="./signal" style="text-decoration: none;color: black;font-family: Amatic SC;font-weight: bolder;font-size: 30px;">sign in</a>
+    </div>
+</div>
+<br><br><br>
+<br><br><br>
+<video width="640" height="480" autoplay hidden></video>

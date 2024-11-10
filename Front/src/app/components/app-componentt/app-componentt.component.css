@@ -1,0 +1,29 @@
+/* .scrollable-element {
+    transition: transform 0.3s ease-out; 
+  }
+  
+  .scrollable-element.move-right {
+    transform: translateX(calc(var(--move-value) * 1px));
+  }
+  
+  :root {
+    --move-value: 0;
+  } */
+  /* .scrollable-element.move-right {
+    transform: translateX(50px); 
+  }
+   */
+   .scrollable-element img {
+    transition: transform 0.3s ease-out;
+  }
+  
+  .scrollable-element.move-right img {
+     transform: translateX(calc(var(--move-value) * 1px));
+  }
+  
+  :root {
+    --move-value: 1;
+  }
+  body{
+    direction: rtl;
+  }

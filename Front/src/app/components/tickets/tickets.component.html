@@ -1,0 +1,29 @@
+<!-- <p>tickets works!</p>
+<div class="card flex flex-column md:flex-row gap-3">
+    <p-inputGroup>
+        <button type="button" pButton label="Search"></button>
+        <input type="text" pInputText placeholder="Keyword" />
+    </p-inputGroup>
+
+    <p-inputGroup>
+        <input type="text" pInputText placeholder="Keyword" />
+        <button type="button" pButton icon="pi pi-search" class="p-button-warning"></button>
+    </p-inputGroup>
+
+    <p-inputGroup>
+        <button type="button" pButton icon="pi pi-check" class="p-button-success"></button>
+        <input type="text" pInputText placeholder="Vote" />
+        <button type="button" pButton icon="pi pi-times" class="p-button-danger"></button>
+    </p-inputGroup>
+</div> -->
+<div class="container mt-3">
+    <div>{{avelbleplaces}}</div>
+    <ul class="pagination">
+      <li class="page-item"><a class="page-link" (click)="inc()" style="background-color: aquamarine;">+</a></li>
+      <li class="page-item"><a class="page-link" >{{places}}</a></li>
+      <li class="page-item"><a class="page-link" (click)="dic()">-</a></li>
+    </ul>    
+    <div>{{trip?.codeType}}</div>
+
+    <p *ngIf="bool">no more tickets🤷‍♀️</p>
+  </div>

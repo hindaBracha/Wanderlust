@@ -1,0 +1,11 @@
+/* .carousel-inner {
+    transform: scale(0.5);
+}
+*/
+@font-face {
+    font-family: 'RubikVinyl-Regular';
+    src: url('../../../assets/RubikVinyl-Regular.ttf') format('ttf')
+         /* url('./assets/fonts/MyCustomFont.woff') format('woff'); */
+    /* ניתן להוסיף פורמטים נוספים כגון ttf או eot לפי הצורך */
+  }
+  

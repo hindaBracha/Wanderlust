@@ -1,0 +1,101 @@
+<p style="font-size: 40px; text-align: center;color: rgba(0, 0, 0, 0.653);">〰The recommended trips〰</p>
+<div class="card" autoplayInterval="3000" style="transform: scale(0.8);">
+    <!-- autoplayInterval="3000" -->
+    <p-carousel [value]="products" [numVisible]="3" [numScroll]="3" [circular]="true"
+        [responsiveOptions]="responsiveOptions">
+        <ng-template let-product pTemplate="item">
+            <div class="border-1 surface-border border-round m-2 text-center py-5 px-3" style="border: 2px solid var(--surface-d);
+            border-radius: 3px;
+            margin: .3rem;
+            text-align: center;
+            padding: 1rem 0;">
+                <div class="mb-3">
+                    <img src="{{product.img}}" [alt]="product.destination" class="w-6 shadow-2" style="width: 50%;
+                    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)" />
+                </div>
+                <div>
+                    <div class="tag">
+                        <h4 class="mb-1">{{ product.destination }}</h4>
+                        <h6 class="mt-0 mb-3">{{ '$' + product.price }}</h6>
+                        <p-tag class="tag" [value]="product.availablePlaces"
+                            [severity]="getSeverity(product.availablePlaces)"></p-tag>
+                    </div>
+                    <div class="mt-5 flex align-items-center justify-content-center gap-2">
+                        <p-button (onClick)="pass(product.id)" icon="pi pi-search" severity="secondary" [rounded]="true"
+                            class="btn btn-secondary  " />
+                        <p-button (onClick)="alert(product.destination)" icon="pi pi-star-fill" [rounded]="true"
+                            severity="secondary" class=" btn btn-secondary " />
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+    </p-carousel>
+</div>
+<div
+    style="box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+background-color: rgb(205, 203, 203);width: 100%;height: 250px;display: flex;  flex-wrap: wrap; gap: 80px;justify-content: center;margin: auto;">
+    <div style="text-align: center;">
+        <img src="https://localhost:7292/api/getImage/85" class="w-6 shadow-2" style=" width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    margin-top: 60px;" />
+        <p>"it was amaizingg!!!</p>
+        <p>we whant it agin"</p>
+    </div>
+    <div style="text-align: center;">
+        <img src="https://localhost:7292/api/getImage/23" class="w-6 shadow-2" style=" width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    margin-top: 60px;" />
+        <p>"woooooooow</p>
+        <p>i am magnificate!!"</p>
+    </div>
+    <div style="text-align: center;">
+        <img src="https://localhost:7292/api/getImage/2" class="w-6 shadow-2" style=" width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    margin-top: 60px;" />
+        <p>"only hear to by a trips!!</p>
+        <p>i am so anjoy"</p>
+    </div>
+</div>
+<br>
+
+<!-- <div style="background-color: rgb(186, 186, 186);width: 100%;"> -->
+<p style="font-size: 40px; text-align: center;color: rgba(0, 0, 0, 0.653);">〰The papular trips〰</p>
+<div class="card" autoplayInterval="3000" style="transform: scale(0.8);">
+    <p-carousel [value]="products" [numVisible]="3" [numScroll]="3" [circular]="true"
+        [responsiveOptions]="responsiveOptions">
+        <ng-template let-product pTemplate="item">
+            <div class="border-1 surface-border border-round m-2 text-center py-5 px-3" style="border: 2px solid var(--surface-d);
+            border-radius: 3px;
+            margin: .3rem;
+            text-align: center;
+            padding: 1rem 0;">
+                <div class="mb-3">
+                    <img src="{{product.img}}" [alt]="product.destination" class="w-6 shadow-2" style="width: 60%;
+                    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)" />
+                </div>
+                <div>
+                    <div class="tag">
+                        <h4 class="mb-1">{{ product.destination }}</h4>
+                        <h6 class="mt-0 mb-3">{{ '$' + product.price }}</h6>
+                        <p-tag class="tag" [value]="product.availablePlaces"
+                            [severity]="getSeverity(product.availablePlaces)"></p-tag>
+                    </div>
+                    <div class="mt-5 flex align-items-center justify-content-center gap-2">
+                        <p-button (onClick)="pass(product.id)" icon="pi pi-search" severity="secondary" [rounded]="true"
+                            class="btn btn-secondary" />
+                        <p-button (onClick)="alert(product.destination)" icon="pi pi-star-fill" [rounded]="true"
+                            severity="secondary" class=" btn btn-secondary " />
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+    </p-carousel>
+</div>
+<!-- </div> -->
+<!-- <h1 class="animate__animated animate__bounce">An animated element</h1> -->

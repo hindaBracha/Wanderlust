@@ -1,0 +1,9 @@
+<!-- profile.component.html -->
+ <!-- profile.component.html -->
+ <!-- <video #videoElement controls></video>
+ <button (click)="startCamera()">Start Camera</button> -->
+ <video width="640" height="480" autoplay hidden ></video>
+ <button (click)="captureImage()">Capture Image</button>
+ <img [src]="imageDataURL" *ngIf="imageDataURL" alt="Captured Image">
+ 
+  
